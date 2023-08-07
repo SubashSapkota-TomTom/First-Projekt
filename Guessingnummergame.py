@@ -11,21 +11,24 @@ num_of_guess = 0
 while num_of_guess < 5:
     guess = int(input("Enter a number: "))
     
+    if type(guess) == int:
+        try:
 
-    num_of_guess += 1
+            num_of_guess += 1
 
-    if guess < num:
-        print("Your guess is too Small. Try Again!!")
+            if guess < num:
+                print("Your guess is too Small. Try Again!!")
         
 
-    elif guess > num:
-        print("Your guess is too Big. Try Again!!")
+            elif guess > num:
+                print("Your guess is too Big. Try Again!!")
         
 
-    else:
-        print(f"You guess the Right in {num_of_guess} tries. You Won, Thank you {player_name} for Playing with us!! ")
-        break
-             
+            else:
+                print(f"You guess the Right in {num_of_guess} tries. You Won, Thank you {player_name} for Playing with us!! ")
+                break
+        except:
+            print("Invalid input, try again")     
 
 
 else:
